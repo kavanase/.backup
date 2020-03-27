@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Add MacVim to PATH
+export PATH=/Applications/MacVim.app/Contents/bin:$PATH
+
 # Ignore insecure directories
 ZSH_DISABLE_COMPFIX="true"
 
@@ -109,3 +112,22 @@ GITHUB_PASSWORD="Vekav123"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Alias hub as git
+eval "$(hub alias -s)"
+
+# Including old aliases from Lenovo Laptop
+alias bread="cd ~/OneDrive\ -\ Imperial\ College\ London/Bread/"
+alias myrsync='~/OneDrive\ -\ Imperial\ College\ London/Bread/Projects/HPC_Local_Backup/myriad_backup_rsync.sh'
+alias grasync='~/OneDrive\ -\ Imperial\ College\ London/Bread/Projects/HPC_Local_Backup/grace_backup_rsync.sh'
+alias impsync='~/OneDrive\ -\ Imperial\ College\ London/Bread/Projects/HPC_Local_Backup/imphpc_backup_rsync.sh'
+alias thosync='~/OneDrive\ -\ Imperial\ College\ London/Bread/Projects/HPC_Local_Backup/thomas_backup_rsync.sh'
+alias ictsync='~/OneDrive\ -\ Imperial\ College\ London/Bread/Projects/HPC_Local_Backup/icthomas_backup_rsync.sh'
+alias arcsync='~/OneDrive\ -\ Imperial\ College\ London/Bread/Projects/HPC_Local_Backup/archer_backup_rsync.sh'
+alias katsync='~/OneDrive\ -\ Imperial\ College\ London/Bread/Projects/HPC_Local_Backup/kathleen_backup_rsync.sh'
+
+export LS_COLORS='*WAVECAR=93:*CHG*=93:*STOPCAR=31:*INCAR=33:*KPOINTS=33:*POTCAR=33:*job=33:*POSCAR=33:*gz=35'
+# Old Terminal Window Title Setting
+# Uncomment if ya want it back
+# PROMPT_COMMAND="echo -ne \"\033]0;Lenovo Laptop Hometown Cruisin ($HOSTNAME)\007\""
+
