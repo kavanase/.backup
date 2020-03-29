@@ -1,8 +1,22 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Add MacVim to PATH
+# Source Intel C and Fortran compiler variables
+source /opt/intel/mkl/bin/mklvars.sh intel64
+source /opt/intel/bin/compilervars.sh intel64
+export CC=icc
+export FC=ifort
+
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/openmpi-4.0.3/lib/
+export PATH=./:/usr/local/openmpi-4.0.3/bin:$PATH
+export OMP_NUM_THREADS=1
+
+# Possibly need to add this so gcc/gfortran includes system headers
+export CPATH=$CPATH:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+
+# Add MacVim to PATH and alias to vim
 export PATH=/Applications/MacVim.app/Contents/bin:$PATH
+alias vim="mvim"
 
 # Ignore insecure directories
 ZSH_DISABLE_COMPFIX="true"
@@ -74,7 +88,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(github ssh-agent)
+plugins=(github z ssh-agent)
 
 # Enable ssh-agent forwarding 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -131,3 +145,5 @@ export LS_COLORS='*WAVECAR=93:*CHG*=93:*STOPCAR=31:*INCAR=33:*KPOINTS=33:*POTCAR
 # Uncomment if ya want it back
 # PROMPT_COMMAND="echo -ne \"\033]0;Lenovo Laptop Hometown Cruisin ($HOSTNAME)\007\""
 
+# Enable oh-my-zsh syntax highlighting
+source /Users/kavanase/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
