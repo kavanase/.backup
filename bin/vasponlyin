@@ -1,0 +1,4 @@
+#!/bin/bash
+# Script to delete all non-input VASP files in the current directory
+shopt -s extglob
+rm -v !("INCAR"|"POSCAR"|"POTCAR"|"KPOINTS"|*.*)
